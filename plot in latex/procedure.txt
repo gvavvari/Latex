@@ -1,0 +1,22 @@
+MATLAB:
+
+xlabel('$x$ (m)','Interpreter','LaTex','FontSize', 8);
+ylabel('$y$ (m)','Interpreter','LaTex','FontSize', 8);
+legend({'True position $x$', 'Measured position $z$'},'Interpreter','LaTex','location','northeastoutside','FontSize', 8);
+matlab2tikz('trajectory.tikz', 'height', '\figureheight', 'width', '\figurewidth','parseStringsAsMath',true,...
+                       'extraaxisoptions',['title style={font=\Huge},'...
+                       'xlabel style={font=\tiny},'...
+                       'ylabel style={font=\tiny},',...
+                       'legend style={font=\tiny},']);
+
+
+IN LATEX:
+
+\begin{figure}
+\centering
+\setlength\figureheight{9cm}
+\setlength\figurewidth{20cm}
+\input{NEES.tikz}
+%\caption{NEES}
+\label{fig:NEES}
+\end{figure}
